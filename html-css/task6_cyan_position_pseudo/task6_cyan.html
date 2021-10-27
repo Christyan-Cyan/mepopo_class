@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 6</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            height: 3000px;
+        }
+        .nav *{
+            margin: 0;
+        }
+        .nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            color: rgb(183, 183, 248);
+            background-color: rgb(2, 2, 27);
+            width: 100%;
+            position: fixed;
+            z-index: 10;
+        }
+        .nav > div{
+            display: flex;
+        }
+        .nav > div > div{
+            margin-left: 8px;
+        }
+        .flex{
+            display: flex;
+            justify-content: center;
+            padding-top: 80px;
+        }
+        .card{
+            position: relative;
+            color: white;
+            margin: 20px;
+            width: 200px;
+            height: 300px;
+        }
+        .card > img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .cover{
+            position: absolute;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transition: background-color 0.5s;
+        }
+        .card:hover > .cover{
+            background-color: rgba(0, 0, 0, 0.363);
+        }
+        .label{
+            position: absolute;
+            padding: 3px 12px;
+            margin: 10px;
+            background-color: rgb(96, 192, 221);
+            border-radius: 5px;
+            top: 0;
+            right: 0;
+        }
+        .title{
+            position: absolute;
+            width: 100%;
+            padding: 3px 0 3px 0;
+            background-color: rgb(96, 192, 221);
+            bottom: 0;
+            left: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <h3>Cat</h3>
+        <div>
+            <div>Home</div>
+            <div>Product</div>
+            <div>Contact</div>
+        </div>
+    </div>
+
+    <div class="flex">
+        <div class="card">
+            <img src="img/cat1.jpg" alt="begula">
+            <div class="cover">
+                <div class="label">
+                    $40
+                </div>
+                <div class="title">
+                    Some Product
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
