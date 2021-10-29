@@ -13,25 +13,50 @@
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             height: 3000px;
         }
-        .nav *{
-            margin: 0;
-        }
-        .nav{
+        .navbar{
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            background: rgb(96, 192, 221);
+            height: 80px;      
+
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px;
-            color: rgb(183, 183, 248);
-            background-color: rgb(2, 2, 27);
-            width: 100%;
+            flex-wrap: wrap;
+            align-content: center;
+
             position: fixed;
-            z-index: 10;
+            top: 0;
+            z-index: 20;      
+            width: 100%;
         }
-        .nav > div{
+        .nav-title{
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+            font-style: italic;
+            margin-left: 20px;
+        }
+        .nav-menu{
+            margin-left: auto;
+            margin-right: 20px;
             display: flex;
+            flex-wrap: wrap;
+            align-content: center;
         }
-        .nav > div > div{
-            margin-left: 8px;
+        .nav-menu a{
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+            font-size: 18px;
+            transition: color 0.2s;
+        }
+        .nav-menu a:hover{
+            color: rgb(34, 90, 107);
+        }
+        .link{
+            display: none;
+        }
+        .nav-menu-mobile{
+            font-size: 30px;
         }
         .flex{
             display: flex;
@@ -79,22 +104,49 @@
             bottom: 0;
             left: 0;
         }
+        @media screen and (min-width: 767px){
+            .nav-title{
+                margin-left: 80px;
+            }
+            .nav-menu{
+                margin-right: 80px;
+            }
+            .link{
+                display: block;
+            }
+            .nav-menu-mobile{
+                display: none;
+            }
+        }
+        @media screen and (min-width: 1023px){
+            .link{
+                display: block;
+            }
+            .nav-menu-mobile{
+                display: none;
+            }
+        }
 
     </style>
 </head>
 <body>
-    <div class="nav">
-        <h3>Cat</h3>
-        <div>
-            <div>Home</div>
-            <div>Product</div>
-            <div>Contact</div>
-        </div>
+    <div class="navbar">
+        <a href="#" class="nav-title">Cat Shop</a>
+        <div class="nav-menu">
+            <div class="nav-menu-mobile">
+                &#8285;
+            </div>
+            <div class="link">
+                <a href="#">Home</a>
+                <a href="#">Product</a>
+                <a href="#">Contact</a>
+            </div>
+        </div> 
     </div>
 
     <div class="flex">
         <div class="card">
-            <img src="img/cat1.jpg" alt="begula">
+            <img src="../img/cat1.jpg" alt="begula">
             <div class="cover">
                 <div class="label">
                     $40
