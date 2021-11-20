@@ -1,0 +1,106 @@
+<!--
+Instruksi Task:
+Buat alat penjumlah dengan ketentuan sebagai berikut..
+
+Ketentuan:
+-div "bil-satu" untuk bilangan satu dan div "bil-dua" untuk bilangan dua
+-kedua div bilangan bisa dinaikkan +1 nilainya dengan cara menekan button yang sesuai
+-jika button Ketiga ditekan maka nilai div "bil-satu" dan "bil-dua" akan dijumlahkan
+-kalian bebas menambahkan parameter pada functions
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions</title>
+  <style>
+    body{
+      padding: 0;
+      margin: 0;
+      
+      text-align: center;
+      color: white;
+      background-color: rgb(141, 65, 112);
+    }
+    .container{
+      display: block;
+      margin: 10px 0;
+    }
+    div{
+      display: inline;
+    }
+    .button{
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    button{
+      width: 23%;
+      margin-bottom: 20px;
+      
+      border: 1px solid white;
+      border-radius: 10px;
+    }
+    .tambah{
+      background-color: rgb(91, 228, 91);
+    }
+    .kurang{
+      background-color: tomato;
+    }
+    .jumlah{
+      background-color: dodgerblue;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>Matematika Penyiksaan</h1>
+
+  <div class="container">
+    <div id="bil-satu">1</div>
+    <div>+</div>
+    <div id="bil-dua">1</div>
+    <div>=</div>
+    <div id="hasil">...</div>
+  </div>
+
+
+  <div class="button">
+    <button onclick="Tambahkan('bil-satu')" class="tambah">Tambahkan bilangan satu</button>
+    <button onclick="Kurangkan('bil-satu')" class="kurang">Kurangkan bilangan satu</button>
+    <button onclick="Tambahkan('bil-dua')" class="tambah">Tambahkan bilangan dua</button>
+    <button onclick="Kurangkan('bil-dua')" class="kurang">Kurangkan bilangan dua</button>
+    <button onclick="Kalkula('hasil', 'bil-satu', 'bil-dua')" class="jumlah">Jumlahkan bilangan satu dan dua</button>
+  </div>
+
+  <script>
+
+    function Tambahkan(id){
+      var angka = document.getElementById(id);
+
+      angka.innerHTML = parseInt(angka.innerHTML) + 1;
+    }
+
+    function Kurangkan(id){
+      var angka = document.getElementById(id);
+
+      angka.innerHTML = parseInt(angka.innerHTML) - 1;
+    }
+
+    function Kalkula(id, satu, dua){
+      var bilSatu = document.getElementById(satu).innerHTML;
+      var bilDua = document.getElementById(dua).innerHTML;
+
+      var result = parseInt(bilSatu) + parseInt(bilDua);
+
+      if (!isNaN(result)) {
+        document.getElementById(id).innerHTML = result;
+      }
+    }
+  </script>
+</body>
+</html>
