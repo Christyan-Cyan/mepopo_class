@@ -1,0 +1,74 @@
+<!--
+Instruksi Task:
+Tampilkan data dari kedua array ke div "target"
+
+Ketentuan:
+-struktur tampilan setidaknya kayak di ss
+-data yang ditampilkan harus terstyle dengan class yang tertera (property boleh diganti)
+
+Tips:
+masukkan element html lewat .innerHTML
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array and Loop</title>
+  <style>
+    *{
+      font-family: Arial, Helvetica, sans-serif;
+      box-sizing: border-box;
+    }
+    #target{
+      background-color: rgb(55, 55, 55);
+      border: 1px solid azure;
+      width: 300px;
+      height: auto;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    #target *{
+      padding: 12px;
+      width: 50%;
+    }
+
+    .div-judul{
+      color: azure;
+      border-bottom: 1px solid azure;
+      font-weight: bold;
+    }
+    .div-jurusan{
+      color: goldenrod;
+      font-weight: bold;
+    }
+    .div-jumlah-murid{
+      color: cornflowerblue;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="target">
+   
+  </div>
+
+
+  <script>
+    let jurusan = ['RPL', 'TKJ', 'SIJA'];
+    let panjangJurusan = jurusan.length;
+    let content = "<div class='div-judul'>Jurusan</div><div class='div-judul'>Jumlah murid</div>";
+
+    let jumlahMurid = [34, 32, 35];
+    
+    for(i = 0; i < panjangJurusan; i++){
+      content += `<div class="div-jurusan">${jurusan[i]}</div> <div class="div-jumlah-murid">${jumlahMurid[i]} </div>`;
+    }
+
+    document.getElementById('target').innerHTML = content;
+  </script>
+</body>
+</html>
