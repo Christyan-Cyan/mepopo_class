@@ -12,22 +12,26 @@
     //Membuat object berisi (array, object_child, method)
 
     let hero_list = {
-        member : ['Hizbul', 'Irish'],
+        member : ['Hizbul', 'Irish', 'Ibulish'],
         mode : {
             hizbul : ['Hizbul (Original)', 'Super Hizbul', 'Mega Hizbul'],
-            irish : ['Irish (Original)', 'Irish Breakout', 'Irish Saikyou']
+            irish : ['Irish (Original)', 'Irish Breakout', 'Irish Saikyou'],
+            ibulish : ['Ibulish (Original)', 'Ibulish Mecha', 'Ibulish Supreme']
         },
-        pick_hero(){
-            let total_hero = this.member.length;
-            let randomRank = Math.floor(Math.random() * total_hero);
+        hero(){
+            let all_member = this.member;
+            let all_mode = this.mode;
 
-            return this.member[randomRank];
+            console.log("Hero List : " + all_member.join("/"));
+            console.log("Hizbul mode : " + all_mode.hizbul.join("|"));
+            console.log("Irish mode : " + all_mode.irish.join("-"));
+            console.log("Ibulish mode : " + all_mode.ibulish.join("_"));
         }
     };
 
     console.log(hero_list.member);
     console.log(hero_list.mode);
-    console.log(hero_list.pick_hero());
+    console.log(hero_list.hero());
 
 </script>
 </body>
