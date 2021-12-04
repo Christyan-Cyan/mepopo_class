@@ -1,0 +1,71 @@
+<!--
+Instruksi Task:
+Buat alat penambah kayak task 3-function
+
+Ketentuan:
+-jika kotak diclick maka akan ditambah +1 pada kotak itu saja
+-jika button diclick maka seluruh kotak ditambah +1
+-kali ini tidak boleh memakai id sama sekali
+
+Tips:
+untuk menambahkan per satu kotak saja kalian bisa 
+menggunakan `this` (contoh tertera)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Object</title>
+  <style>
+    *{
+      box-sizing: border-box;
+    }
+    .container{
+      display: flex;
+      flex-wrap: wrap;
+      width: 200px;
+      height: 200px;
+      background-color: rgb(42, 85, 163);
+      color: white;
+    }
+    .container > .box{
+      cursor: pointer;
+      width: 50%;
+      height: 50%;
+      border: 1px solid black;
+    }
+    .box:hover{
+      background-color: rgb(54, 54, 54);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div onclick="tambahkan(this)" class="box">1</div>
+    <div onclick="tambahkan(this)" class="box">1</div>
+    <div onclick="tambahkan(this)" class="box">1</div>
+    <div onclick="tambahkan(this)" class="box">1</div>
+  </div>
+  
+  <button onclick="tambahkanSemua('box')">Tambahkan semua</button>
+
+
+  <script>
+    function tambahkan(ini){
+      ini.innerHTML = parseInt(ini.innerHTML) + 1;
+    }
+
+    function tambahkanSemua(kelas){
+      let ambil = document.getElementsByClassName(kelas);
+      
+      for(i = 0; i < ambil.length; i++){
+       ambil[i].innerHTML = parseInt(ambil[i].innerHTML) + 1
+      }
+      console.log(parseInt(ambil[1].innerHTML) + 1);
+    }
+  </script>   
+</body>
+</html>
