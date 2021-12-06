@@ -1,0 +1,78 @@
+<!--
+Instruksi Task:
+Buat form password verifikasi, untuk tampilan bisa kalian kreasikan sendiri (sekalian latihan)
+
+Ketentuan:
+-eventlistener dituliskan di script (bukan secara langsung di element'nya)
+-ketika kedua password sama berilah div `tampilan` teks keterangan "password benar"
+-ketika kedua password tidak sama berilah div `tampilan` teks keterangan "password tidak sama"
+
+
+Tips:
+-conditional dan bitwise diperlukan disini
+-beri element <input>'nya attribute type="password" untuk membuat input bertipe password
+-gunakan eventlistener "keyup"
+-silahkan coba coba dulu "keyup" terlebih dahulu jalankan alert atau 
+console.log agar mengetahui bagaimana "keyup" bekerja
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advancement</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .inpPass{
+      display: flex;
+      justify-content: center;
+    }
+    input{
+      margin: 10px 0 0 10px;
+      text-align: center;
+    }
+    #tampilan{
+      color: azure;
+      width: 40%;
+      border-radius: 5px;
+      margin: 10px auto;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="inpPass">
+    <input type="password" id="insertPass" onkeyup="verifikasi()" placeholder="Masukan password">
+    <input type="password" id="confirmPass" onkeyup="verifikasi()" placeholder="Masukan ulang password">
+  </div>
+
+  <div id="tampilan">
+
+  </div>
+
+  <script>
+    function verifikasi(){
+      let Pass1 = document.getElementById('insertPass');
+      let Pass2 = document.getElementById('confirmPass');
+      let popup = document.getElementById('tampilan');
+      
+      if(Pass1.value != Pass2.value){
+        popup.innerHTML = "Maaf, password anda tidak valid";
+        popup.style.background = "tomato";
+      }
+      else{
+        popup.innerHTML = "Password Benar";
+        popup.style.background = "lightgreen";
+      }
+    }
+  </script>
+</body>
+</html>
