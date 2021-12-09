@@ -1,0 +1,74 @@
+<!--
+Instruksi Task:
+Buatlah conditional sederhana
+
+Ketentuan:
+-jika umur 7 sampai 13 maka output "SD" dengan background merah
+-jika umur 13 sampai 15 maka output "SMP" dengan background biru tua
+-jika umur 15 sampai 17 maka output "SMA" dengan background biru muda
+-selain dari itu maka output "antara sudah lulus atau belum cukup umur" (atau apalah anjir) dengan background abu abu
+-tolong distyling output'nya agar enak dilihat (kasih color untuk text'nya, ukuran font, border, dll)
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditional</title>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #output{
+      text-align: center;
+
+      color: azure;
+      border: 1px solid azure;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <form action="">
+    <label for="age">Age :</label>
+    <input type="text" name="age" id="age" placeholder="Input Your Age" onkeyup="inputUmur()">
+  </form>
+
+  <div id="output">
+    
+  </div>
+
+  <script>    
+    function inputUmur(){
+      let umur = document.getElementById('age');
+      let ambilOutput = document.getElementById('output');
+
+      if(umur.value >= 7 || umur.value < 13){
+        ambilOutput.innerHTML = "Anda adalah Murid SD";
+        ambilOutput.style.background = "rgb(206, 50, 50)";
+      }
+      else if(umur.value >= 13 || umur.value <= 15){
+        ambilOutput.innerHTML = "Anda adalah Murid SMP";
+        ambilOutput.style.background = "rgb(21, 56, 121)";
+      }
+      else if(umur.value > 15 || umur.value <= 17){
+        ambilOutput.innerHTML = "Anda adalah Murid SMA/SMK";
+        ambilOutput.style.background = "rgb(50, 170, 206)";
+      }
+      else{
+        ambilOutput.innerHTML = "Anda belum cukup umur atau sudah lulus";
+        ambilOutput.style.background = "rgb(155, 162, 173)";
+      }
+    }
+    
+
+  </script>
+</body>
+</html>
