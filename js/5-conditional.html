@@ -32,6 +32,8 @@ Ketentuan:
       color: azure;
       border: 1px solid azure;
       border-radius: 5px;
+
+      margin-top: 15px;
     }
   </style>
 </head>
@@ -50,15 +52,15 @@ Ketentuan:
       let umur = document.getElementById('age');
       let ambilOutput = document.getElementById('output');
 
-      if(umur.value >= 7 || umur.value < 13){
+      if(umur.value >= 7 && umur.value < 13){
         ambilOutput.innerHTML = "Anda adalah Murid SD";
         ambilOutput.style.background = "rgb(206, 50, 50)";
       }
-      else if(umur.value >= 13 || umur.value <= 15){
+      else if(umur.value >= 13 && umur.value <= 15){
         ambilOutput.innerHTML = "Anda adalah Murid SMP";
         ambilOutput.style.background = "rgb(21, 56, 121)";
       }
-      else if(umur.value > 15 || umur.value <= 17){
+      else if(umur.value > 15 && umur.value <= 17){
         ambilOutput.innerHTML = "Anda adalah Murid SMA/SMK";
         ambilOutput.style.background = "rgb(50, 170, 206)";
       }
