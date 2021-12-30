@@ -1,0 +1,46 @@
+<!--
+Instruksi Task:
+Buatlah if-else pendeteksi ganjil genap
+
+Ketentuan:
+-jika angka pada div "target" ganjil maka outputkan pada div "tampilan" string "Ganjil"
+dengan background biru
+-jika genap maka maka outputkan "Genap" dengan background hijau
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ganjil Genap</title>
+</head>
+<body>
+  <!-- <div id="target"></div> --> <!-- this is suck :v kuganti ae lah -->
+  <form action="">
+    <label for="">Input Angka</label>
+    <input type="number" id="target" onkeyup="ceknumber();">
+  </form>
+
+  <div id="tampilan"></div>
+
+  <script>
+    function ceknumber(){
+      let target = document.getElementById("target").value;
+      let tampilan = document.getElementById("tampilan");
+
+      if(target % 2 == 0){
+        tampilan.innerHTML = "Genap";
+        tampilan.style.background = "dodgerblue";
+      }
+      else{
+        tampilan.innerHTML = "Ganjil";
+        tampilan.style.background = "lightgreen";
+      }
+    }
+  </script>
+</body>
+</html>

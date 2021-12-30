@@ -1,0 +1,63 @@
+<!--
+Instruksi Task:
+Buatlah formulir simple
+
+Ketentuan:
+-eventlistener ditulis inscript bukan pakai attribute
+-jika semua input belum diisi maka disable button submit
+-jika tombol untuk generate kode unik maka dapatkan angka 
+random dari 0 sampai 1000 (tiru dari cara mendapatkan index array random di materi 7 `object-creation`)
+-ketika semua input diisi (termasuk input angka unik) dan juga password verifikasi'nya sudah sama
+maka enable (disabled = false) tombol submit'nya
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+</head>
+<body>
+  <form action="">
+    <input type="text" id="username" placeholder="Masukkan nama pengguna">
+
+    <input type="password" id="password" placeholder="Masukkan password">
+
+    <input type="password" id="password2" placeholder="Konfirmasi password">
+
+    <input type="number" id="" placeholder="Dapatkan kode unik">
+    <button type="button" id="btnRandom">Generate kode unik</button>
+
+
+    <button type="submit" id="btnSubmit">Submit form</button>
+  </form>
+  
+  <div id="randomCode">Random Code : </div>
+
+  <script>    
+    
+    document.addEventListener("click", function(){
+      document.getElementById("btnRandom");
+
+      document.getElementById("randomCode").innerHTML = Math.floor(Math.random() * 1000);
+    })
+    
+    if(input.length == 0){
+      document.getElementById('btnSubmit').disable = true;
+    }
+    else{
+      document.getElementById('btnSubmit').disable = false;
+    }
+
+    // document.addEventListener("click", function(){
+      // code untuk button submit
+    // });
+
+    // document.getElementById("myBtn").disabled = true; 
+
+  </script>
+</body>
+</html>
