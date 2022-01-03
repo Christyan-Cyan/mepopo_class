@@ -22,41 +22,59 @@ maka enable (disabled = false) tombol submit'nya
 </head>
 <body>
   <form action="">
-    <input type="text" id="username" placeholder="Masukkan nama pengguna">
+    <input type="text" id="username" class="inputs" placeholder="Masukkan nama pengguna">
 
-    <input type="password" id="password" placeholder="Masukkan password">
+    <input type="password" id="password" class="inputs" placeholder="Masukkan password">
 
-    <input type="password" id="password2" placeholder="Konfirmasi password">
+    <input type="password" id="password2" class="inputs" placeholder="Konfirmasi password">
 
-    <input type="number" id="" placeholder="Dapatkan kode unik">
+    <input type="number" id="code" class="inputs" placeholder="Dapatkan kode unik">
     <button type="button" id="btnRandom">Generate kode unik</button>
 
 
     <button type="submit" id="btnSubmit">Submit form</button>
   </form>
   
-  <div id="randomCode">Random Code : </div>
+  <div>Random Code : <span id="randomCode"></span></div>
 
   <script>    
+    let inputs = document.getElementsByClassName('inputs');
+    let btnSubmit = document.getElementById('btnSubmit');
+    let pw1 = document.getElementById('password');
+    let pw2 = document.getElementById('password2');
+    let code = document.getElementById('code');
+    let randomCode = document.getElementById('randomCode');
     
-    document.addEventListener("click", function(){
-      document.getElementById("btnRandom");
-
-      document.getElementById("randomCode").innerHTML = Math.floor(Math.random() * 1000);
+    document.getElementById("btnRandom").addEventListener("click", function(){
+      randomCode.innerHTML = Math.floor(Math.random() * 1000);
     })
-    
-    if(input.length == 0){
-      document.getElementById('btnSubmit').disable = true;
-    }
-    else{
-      document.getElementById('btnSubmit').disable = false;
+
+    for (let i = 0; i < inputs.length; i++) {
+      if(inputs[i].value.length == 0){
+        btnSubmit.disabled = true;
+      }
+      // else{
+      //   btnSubmit.disabled = false;
+      // }
     }
 
-    // document.addEventListener("click", function(){
-      // code untuk button submit
-    // });
+    pw2.addEventListener("keyup", function(){
+      if(pw1.value == pw2.value){
+        btnSubmit.disabled = false;
+      }
+    })
 
-    // document.getElementById("myBtn").disabled = true; 
+    btnSubmit.addEventListener("click", function(){
+      if (code.value == "") {
+        alert("input your random code first");
+      }
+      else if(code.value != randomCode.innerHTML){
+        alert("Oops... wrong code, try again");
+      }
+      else if(code.value == randomCode.innerHTML){
+        alert("login success");
+      }
+    })
 
   </script>
 </body>
