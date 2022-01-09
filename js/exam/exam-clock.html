@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">    
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 250px 0 0 0;
+
+            font-family: 'Bebas Neue', cursive;
+            font-size: 100px;
+            text-align: center;
+            color: white;
+
+            background: url(mountain.jpg);
+            background-size: cover;
+        }
+    </style>
+    
+</head>
+<body id="jam">
+<script>
+    window.onload = function() {jam();}
+
+    function jam() {
+        let ambil = document.getElementById('jam'),
+        date = new Date(), hours, minute, second;
+        hours = date.getHours();
+        minute = set(date.getMinutes());
+        second = set(date.getSeconds());
+
+        ambil.innerHTML = hours + " : " + minute + " : " + second;
+
+        setTimeout('jam()', 1000);
+    }
+
+    function set(a) {
+        d = a < 10 ? '0' + a : a;
+        return d;
+    }
+</script>
+</body>
+</html>

@@ -19,21 +19,82 @@ maka enable (disabled = false) tombol submit'nya
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form</title>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: rgb(217, 228, 228);
+    }
+    .container{
+      width: 33%;
+      height: auto;
+
+      margin: 100px auto;
+      padding: 20px;
+
+      background-color: rgb(250, 248, 248);
+      border-radius: 5px;
+      box-shadow: -15px 15px 20px rgba(128, 128, 128, 0.664);
+    }
+    .container > h1{
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    input{
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 4px;
+      
+      border-radius: 5px;
+      border: 1px solid grey;
+    }
+    button{
+      margin-top: 7%;
+      padding: 5px;
+      font-weight: bold;
+      cursor: pointer;
+
+      color: white;
+      border: 1px solid white;
+      border-radius: 5px;
+    }
+    #btnRandom{
+      background-color: dodgerblue;
+      border: 2px solid rgb(33, 117, 143);
+    }
+    #btnSubmit{
+      background-color: rgb(69, 121, 69);
+      color: rgba(255, 255, 255, 0.699);
+      border: 2px solid green;
+    }
+    #btnRandom:hover{
+      background-color: rgb(33, 119, 206);
+      border: 2px solid rgb(30, 92, 110);
+      color: rgb(201, 202, 202);
+    }
+  </style>
 </head>
 <body>
-  <form action="">
-    <input type="text" id="username" class="inputs" placeholder="Masukkan nama pengguna">
+  
+  <div class="container">
+    <h1>LOGIN FORM</h1>
 
-    <input type="password" id="password" class="inputs" placeholder="Masukkan password">
+    <form action="">
+      <input type="text" id="username" placeholder="Masukkan nama pengguna">
 
-    <input type="password" id="password2" class="inputs" placeholder="Konfirmasi password">
+      <input type="password" id="password" placeholder="Masukkan password">
 
-    <input type="number" id="code" class="inputs" placeholder="Dapatkan kode unik">
-    <button type="button" id="btnRandom">Generate kode unik</button>
+      <input type="password" id="password2" placeholder="Konfirmasi password">
+
+      <input type="number" id="code" placeholder="Dapatkan kode unik">
+      <button type="button" id="btnRandom">Generate kode unik</button>
 
 
-    <button type="submit" id="btnSubmit">Submit form</button>
-  </form>
+      <button type="submit" id="btnSubmit" disabled>Submit form</button>
+    </form>
+  </div>
 
   <script>    
     let inputs = document.getElementsByClassName('inputs');
@@ -41,8 +102,6 @@ maka enable (disabled = false) tombol submit'nya
     let pw1 = document.getElementById('password');
     let pw2 = document.getElementById('password2');
     let code = document.getElementById('code');
-    
-    btnSubmit.disabled = true;
 
     document.getElementById("btnRandom").addEventListener("click", function(){
       code.value = Math.floor(Math.random() * 1000);
@@ -57,6 +116,8 @@ maka enable (disabled = false) tombol submit'nya
     pw2.addEventListener("keyup", function(){
       if(pw1.value == pw2.value){
         btnSubmit.disabled = false;
+        btnSubmit.style.background = "rgb(43, 156, 43)";
+        btnSubmit.style.color = "white";
       }
     })
 
